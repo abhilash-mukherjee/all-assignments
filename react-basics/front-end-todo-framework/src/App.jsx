@@ -3,32 +3,46 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
 
+
+
+function App() {
+
+  const [todos, setTodo] = useState([{
+    id: "hhuihuhuiiu004994",
+    title: "Go to gym",
+    description: "Gym karo, bode banao, khush raho"
+  },
+  {
+    id: ",jfgtrhrhhyyhhr",
+    title: "Eat Food",
+    description: "Gym karo, bode banao, khush raho"
+  },
+  {
+    id: "mmjjmjmjjj",
+    title: "thnrr",
+    description: "Gym karo, bode banao, khush raho"
+  }])
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {todos.map(todo => {
+        return (
+          <Todo title = {todo.title} description = {todo.description}></Todo>
+        )
+      })}
     </>
+  )
+}
+
+function Todo(props) {
+  return (
+    <div style={{backgroundColor: "blue"}}>
+      {props.title}
+      <br></br>
+      {props.description}
+      <br></br>
+      <br></br>
+    </div>
   )
 }
 
